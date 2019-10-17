@@ -54,6 +54,10 @@ end
         puts "<"
         puts "A #{player.name} de jouer, choisissez un numéro de case entre 1 et 9"
         position = gets.chomp.to_i
+        until position > 0 && position < 10
+            puts "Non tjr pas, choisis un chiffre entre 1 et 9"
+            position = gets.chomp.to_i
+        end
         @board.change_tick(position - 1 , player.symbol) 
         puts "Tu as choisi la case #{position}"
 
